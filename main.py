@@ -25,10 +25,6 @@ def validate_entry(entry):
 def main():
     validate_entry(ENTRY)
     os.makedirs("/output", exist_ok=True)
-    try:
-        os.chmod("/output", 0o755)
-    except OSError:
-        pass
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(ENTRY)
     os.chmod("/output/entry.txt", 0o644)
